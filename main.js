@@ -77,6 +77,7 @@ function start(level){
     actualLevel.eggsExploted = 0;
     actualLevel.eggsToExplote = actualLevel.eggs;
     actualLevel.cellsCleared = 0;
+    if(timing) { timing = timer.stop(); }
     localStorage.setItem("actualLevel",JSON.stringify(actualLevel));
     navigator.serviceWorker.ready.then(
         swRegistration => swRegistration.getNotifications().then(notifications =>
